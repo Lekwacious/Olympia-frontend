@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  private apiServerUrl = environment.apiBaseUrl;
   form: FormGroup;
   constructor(private formBuilder: FormBuilder,
               private http: HttpClient,
@@ -22,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
   submit(): void{
     console.log(this.form.getRawValue());
-    this.http.post('http://localhost:8081/api/auth/signin', this.form.getRawValue(), {
+    this.http.post(`${this.apiServerUrl}/api/auth/signin`, this.form.getRawValue(), {
       withCredentials: true
     }).subscribe(() => this.router.navigate(['mainview']));
   }

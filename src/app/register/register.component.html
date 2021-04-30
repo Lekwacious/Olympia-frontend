@@ -15,3 +15,47 @@
 
   <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
 </form>
+
+
+
+<div class="wrapper" >
+  <div class="form">
+    <div class="title">
+      Login To Olympia
+    </div>
+    <form [formGroup]="form" (submit)="submit()">
+      <div class="input_wrap">
+        <label for="input_text">First Name</label>
+        <div class="input_field">
+          <input formControlName="firstName" type="email" class="input" required>
+        </div>
+      </div>
+
+      <div class="input_wrap">
+        <label for="input_text">Last Name</label>
+        <div class="input_field">
+          <input formControlName="lastName" type="text" class="input" >
+        </div>
+      </div>
+
+      <div class="input_wrap">
+        <label for="input_text">Email</label>
+        <div class="input_field">
+          <input formControlName="email" type="email" class="input" id="input_text">
+        </div>
+      </div>
+
+      <div class="input_wrap">
+        <label for="input_password">Password</label>
+        <div class="input_field">
+          <input formControlName="password" type="password" class="input" id="input_password">
+        </div>
+      </div>
+      <div class="input_wrap">
+        <span class="error_msg">Incorrect username or password. Please try again</span>
+        <input type="submit" class="btn " >
+        <button class="w-100 btn disabled" type="submit">Sign in</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,13 +1,40 @@
-<form [formGroup]="form" (submit)="submit()">
-  <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+<!--<form [formGroup]="form" (submit)="submit()">-->
+<!--  <h1 class="h3 mb-3 fw-normal">Please sign in</h1>-->
 
 
-  <input formControlName="email" type="email" class="form-control"  placeholder="name@example.com" required="">
+<!--  <input formControlName="email" type="email" class="form-control"  placeholder="name@example.com" required="">-->
 
 
-  <input formControlName="password" type="password" class="form-control" placeholder="Password" required="">
+<!--  <input formControlName="password" type="password" class="form-control" placeholder="Password" required="">-->
 
 
 
-  <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-</form>
+<!--  <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>-->
+<!--</form>-->
+
+<div class="wrapper" >
+  <div class="form">
+    <div class="title">
+      Login To Olympia
+    </div>
+    <form [formGroup]="form" (submit)="submit()">
+      <div class="input_wrap">
+        <label for="input_text">Email</label>
+        <div class="input_field">
+          <input formControlName="email" type="email" class="input" id="input_text">
+        </div>
+      </div>
+      <div class="input_wrap">
+        <label for="input_password">Password</label>
+        <div class="input_field">
+          <input formControlName="password" type="password" class="input" id="input_password">
+        </div>
+      </div>
+      <div class="input_wrap">
+        <span class="error_msg">Incorrect username or password. Please try again</span>
+        <input type="submit" class="btn " >
+          <button class="w-100 btn disabled" type="submit">Sign in</button>
+      </div>
+    </form>
+  </div>
+</div>
